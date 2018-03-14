@@ -37,7 +37,9 @@ const asyncIncrementor = () => {
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (param) => {
+  /*setTimeout(() => param, 1000);*/
+};
 
 const getDeepPropertiesCount = (obj) => {
   var counter = 0, strObj = JSON.stringify(obj).split('');
@@ -48,12 +50,7 @@ const getDeepPropertiesCount = (obj) => {
 };
 
 const createSerializedObject = () => {
-  /*var obj = {
-    toJSON: function() {
-      return obj;
-    }
-  };
-  return obj;*/
+  return null;
 };
 
 const toBuffer = () => {};
