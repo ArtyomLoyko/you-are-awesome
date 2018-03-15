@@ -60,9 +60,9 @@ const returnBackInSecond = (param) => {};
 
 const getDeepPropertiesCount = (obj) => {
   var counter = 0, strObj = JSON.stringify(obj).split('');
-  strObj.forEach( i => {
-    if(i == ':') counter++;
-  });
+  for(var i = 0; i < strObj.length; i++) {
+    if(strObj[i] == ':' && strObj[i + 1] == '{') counter++;
+  }
   return counter;
 };
 
