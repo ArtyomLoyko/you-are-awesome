@@ -30,16 +30,30 @@ const incrementor = () => {
 };
 incrementor.counter = 1;
 
-const asyncIncrementor = () => {
+const asyncIncrementor = () => {};
 
+const createIncrementer = () => {
+  return {
+    counter: 0,
+
+    next() {
+      this.counter++;
+      return this;
+    },
+
+    get value() {
+      return this.counter;
+    },
+
+    [Symbol.iterator]() {
+      this.counter--;
+      return this.next();
+    }
+  };
 };
-
-const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = (param) => {
-  /*setTimeout(() => param, 1000);*/
-};
+const returnBackInSecond = (param) => {};
 
 const getDeepPropertiesCount = (obj) => {
   var counter = 0, strObj = JSON.stringify(obj).split('');
