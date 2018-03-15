@@ -30,7 +30,10 @@ const incrementor = () => {
 };
 incrementor.counter = 1;
 
-const asyncIncrementor = () => {};
+const asyncIncrementor = () => {
+  return asyncIncrementor.counter++;
+};
+asyncIncrementor.counter = 1;
 
 const createIncrementer = () => {
   return {
